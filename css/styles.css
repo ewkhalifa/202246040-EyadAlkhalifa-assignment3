@@ -917,3 +917,10 @@ textarea:focus {
     flex-wrap: wrap;
   }
 }
+.project-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  display: block;
+}

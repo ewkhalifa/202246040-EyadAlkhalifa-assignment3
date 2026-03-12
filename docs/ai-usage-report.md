@@ -27,6 +27,11 @@ I used GitHub Copilot for:
 - Speeding up repetitive code
 - Helping complete simple functions and event listeners
 
+
+### 3. Google Gemini
+I used Google Gemini for:
+- Genarate Pictures 
+
 ## Examples of AI Assistance
 Some examples of where AI helped include:
 - Suggesting the structure for the project documentation
