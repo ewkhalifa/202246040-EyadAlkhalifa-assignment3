@@ -1,116 +1,191 @@
-# Technical Documentation – Assignment 2 Portfolio Website
+# Technical Documentation – Assignment 3 Portfolio Website
 
 ## Overview
-This project is a personal portfolio website developed for Assignment 2.  
-It builds on the previous portfolio by adding more interactivity, dynamic behavior, and better user feedback using JavaScript.
+This project is a personal portfolio website developed for Assignment 3.  
+It builds on Assignments 1 and 2 by adding advanced functionality, external API integration, and more complex application logic.
 
-The goal was to create a website that feels more modern and responsive to user actions.
+The goal of this assignment was to transform the portfolio into a more dynamic and feature-rich web application that demonstrates real-world development concepts.
+
+---
 
 ## Main Features
 
-### 1. Dynamic Greeting
-The website displays a greeting message that changes depending on the time of day.  
-For example:
-- Good Morning
-- Good Afternoon
-- Good Evening
-
-This feature makes the page feel more personal and dynamic.
-
-### 2. Theme Toggle with localStorage
-The website includes a dark/light theme toggle.  
-When the user changes the theme, the preference is saved in `localStorage`.
+### 1. GitHub API Integration
+The website fetches and displays live data from the GitHub API.
 
 #### How it works:
-- JavaScript detects when the user clicks the theme button
-- The selected theme is applied to the page
-- The preference is stored in `localStorage`
-- When the page reloads, the saved theme is loaded automatically
+- JavaScript uses `fetch()` to request repository data from GitHub
+- The response is processed using `async/await`
+- Repository information is dynamically inserted into the page
+- Only relevant repositories are displayed (filtered and sorted)
 
-This demonstrates basic JavaScript data handling.
+#### Benefits:
+- Keeps portfolio content up-to-date automatically
+- Demonstrates real-world API usage
+- Makes the website more dynamic and interactive
 
-### 3. Responsive Navigation Menu
-A mobile navigation menu is included for smaller screen sizes.  
-Users can open and close the menu using a button.
+---
 
-This improves the usability of the site on phones and tablets.
+### 2. Project Filtering System (Complex Logic)
+Users can filter projects based on categories such as:
+- All
+- AI
+- Database
 
-### 4. Contact Form Validation
-The contact form checks user input before submission.
+#### How it works:
+- Each project has a category stored as a data attribute
+- JavaScript checks the selected filter
+- Projects are shown or hidden based on conditions
+- A message updates depending on the result
+
+This demonstrates conditional logic and multi-step decision making.
+
+---
+
+### 3. State Management with localStorage
+The website remembers user preferences.
+
+#### Features stored:
+- Theme (dark/light mode)
+- Visitor name
+
+#### How it works:
+- Data is saved using `localStorage`
+- When the page loads, saved values are retrieved
+- The interface updates automatically
+
+This ensures a consistent user experience.
+
+---
+
+### 4. Dynamic Greeting System
+The site displays:
+- Time-based greeting (morning/afternoon/evening)
+- Personalized greeting using the user's name
+
+This combines dynamic content with stored user data.
+
+---
+
+### 5. Contact Form Validation
+The form validates user input before submission.
 
 #### Validation includes:
-- Required fields must not be empty
-- Invalid input is rejected
-- The user receives feedback through error or success messages
+- Required fields must be filled
+- Email format must be valid
+- Message must meet minimum length
 
-This improves the user experience and ensures the user understands what happened.
+#### Feedback:
+- Error messages for invalid input
+- Success message when validation passes
+
+This improves usability and meets assignment requirements for user feedback.
+
+---
 
 ## User Feedback and Error Handling
-The project includes basic feedback to communicate clearly with the user.
+
+The application clearly communicates with the user.
 
 Examples:
-- Error messages when form fields are empty or invalid
-- A success message when the form is completed correctly
-- Clear feedback when the user interacts with the page
+- “Loading…” message when fetching API data
+- Error message if GitHub API fails
+- Form validation messages
+- Filter result messages (e.g., “No projects found”)
 
-This is important because the assignment requires the application to always give the user feedback.
+This ensures the user is never left without feedback.
+
+---
 
 ## Animation and Transitions
-CSS transitions and hover effects are used to improve the visual experience.
 
-Examples:
-- Smooth hover effects on buttons or links
-- Smooth visual transitions when changing theme or interacting with elements
-- Improved visual responsiveness for user actions
+The project uses subtle animations to improve UX:
 
-These effects are simple and helpful rather than distracting.
+- Hover effects on project cards
+- Smooth button transitions
+- Card lift effect on hover
+- Smooth scrolling between sections
+
+These effects enhance usability without being distracting.
+
+---
 
 ## Technologies Used
-- **HTML5** for page structure
-- **CSS3** for styling, layout, and transitions
-- **JavaScript** for interactivity and dynamic behavior
-- **localStorage** for saving theme preference
+
+- **HTML5** for structure  
+- **CSS3** for layout, design, and animations  
+- **JavaScript (Vanilla JS)** for logic and interactivity  
+- **GitHub API** for external data integration  
+- **localStorage** for state management  
+
+---
 
 ## File Responsibilities
 
 ### `index.html`
-Contains the structure of the portfolio website:
-- Navigation
-- Hero/About section
-- Projects or content sections
-- Contact form
+- Defines the structure of the website
+- Contains sections for About, Projects, GitHub API, and Contact
 
 ### `css/styles.css`
-Contains:
-- Layout styling
-- Responsive design
-- Theme styles
-- Transitions and hover effects
+- Handles layout, responsiveness, and visual design
+- Defines theme styles and animations
 
 ### `js/script.js`
-Contains JavaScript logic for:
-- Dynamic greeting
-- Theme switching
-- Saving theme with `localStorage`
-- Mobile menu interaction
-- Form validation and feedback
+- Handles all JavaScript functionality:
+  - API integration
+  - Filtering logic
+  - Theme management
+  - localStorage handling
+  - Form validation
+  - Dynamic greeting
+
+---
+
+## Performance Considerations
+
+- Images are optimized for faster loading
+- Only a limited number of repositories are displayed
+- Efficient DOM updates are used
+- Unused code is minimized
+
+These choices ensure smooth performance across devices.
+
+---
 
 ## Challenges and Solutions
 
-### Challenge 1: Making the portfolio more interactive
-In Assignment 1, the site was mostly static.  
-To improve it for Assignment 2, JavaScript was added so the page responds to user input.
+### Challenge 1: Integrating external data
+Fetching data from the GitHub API required handling asynchronous code and errors.
 
-### Challenge 2: Saving user preference
-To make the experience more personalized, `localStorage` was used to remember the selected theme.
+**Solution:**  
+Used `async/await` and error handling to ensure the site remains functional.
 
-### Challenge 3: Improving communication with the user
-Form validation and feedback messages were added so users know when something goes wrong or when their action succeeds.
+---
+
+### Challenge 2: Managing multiple features together
+The application includes filtering, API data, and state management.
+
+**Solution:**  
+Organized code into clear functions and structured logic to keep it maintainable.
+
+---
+
+### Challenge 3: Improving user experience
+Ensuring the site provides clear feedback and smooth interaction.
+
+**Solution:**  
+Added messages, animations, and better UI structure.
+
+---
 
 ## Conclusion
-This Assignment 2 portfolio shows clear progress beyond Assignment 1 by adding:
-- Dynamic content
-- Data handling with JavaScript
-- Better user feedback
-- Improved interactivity
-- A more modern user experience
+
+This Assignment 3 portfolio demonstrates significant progress by adding:
+
+- External API integration
+- Complex JavaScript logic
+- State management
+- Improved user feedback
+- Enhanced UI and interactivity
+
+The final result is a dynamic, modern portfolio that reflects real-world web development practices.
