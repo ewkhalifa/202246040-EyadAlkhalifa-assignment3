@@ -487,3 +487,22 @@ textarea:focus {
     flex-wrap: wrap;
   }
 }
+.repo-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: var(--muted);
+  margin: 12px 0;
+}
+.repo-link {
+  margin-top: 10px;
+}
+
+.project {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.18);
+}
