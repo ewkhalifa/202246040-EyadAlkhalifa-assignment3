@@ -21,7 +21,7 @@ function getTimeGreeting() {
   return "Good evening 👋";
 }
 
-// Assignment 2/3 greeting with saved name
+// Greeting with saved name
 function greetUser() {
   const input = $("#nameInput");
   const message = $("#greetMessage");
@@ -37,7 +37,7 @@ function greetUser() {
   message.textContent = `Welcome, ${name}! 👋`;
 }
 
-// Assignment 3 project filter
+// Project filter
 function filterProjects(category) {
   const projects = document.querySelectorAll(".local-project");
   const message = $("#filterMessage");
@@ -62,7 +62,7 @@ function filterProjects(category) {
   }
 }
 
-// Assignment 3 GitHub API integration
+// GitHub API integration (IMPROVED VERSION)
 async function loadGitHubProjects() {
   const container = $("#github-projects");
 
@@ -97,10 +97,17 @@ async function loadGitHubProjects() {
 
       project.innerHTML = `
         <div class="project-body">
-          <h3>${repo.name}</h3>
-          <p>${repo.description || "No description available."}</p>
-          <p><strong>Language:</strong> ${repo.language || "Not specified"}</p>
-          <a href="${repo.html_url}" target="_blank" rel="noopener">View on GitHub</a>
+          <h3>${repo.name.replaceAll("-", " ")}</h3>
+          <p>${repo.description || "A portfolio repository showcasing my coursework and development progress."}</p>
+
+          <div class="repo-meta">
+            <span><strong>Language:</strong> ${repo.language || "Not specified"}</span>
+            <span><strong>Updated:</strong> ${new Date(repo.updated_at).toLocaleDateString()}</span>
+          </div>
+
+          <a class="btn ghost repo-link" href="${repo.html_url}" target="_blank" rel="noopener">
+            View on GitHub
+          </a>
         </div>
       `;
 
@@ -122,7 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const greetingEl = $("#greeting");
   if (greetingEl) greetingEl.textContent = getTimeGreeting();
 
-  // Load saved theme
+  // Load theme
   const savedTheme = localStorage.getItem("theme");
   setTheme(savedTheme || "dark");
 
@@ -132,7 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setTheme(current === "dark" ? "light" : "dark");
   });
 
-  // Load saved visitor name
+  // Load saved name
   const savedName = localStorage.getItem("visitorName");
   const greetMessage = $("#greetMessage");
 
@@ -140,7 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
     greetMessage.textContent = `Welcome back, ${savedName}! 👋`;
   }
 
-  // Mobile navigation
+  // Mobile nav
   const navToggle = $(".nav-toggle");
   const navLinks = $("#nav-links");
 
@@ -156,7 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Contact form validation
+  // Form validation
   const form = $("#contactForm");
   const status = $("#formStatus");
 
@@ -200,6 +207,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Load Assignment 3 API content
+  // Load GitHub API
   loadGitHubProjects();
 });
