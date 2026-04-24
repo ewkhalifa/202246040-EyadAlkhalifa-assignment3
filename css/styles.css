@@ -506,33 +506,48 @@ textarea:focus {
   transform: translateY(-6px);
   box-shadow: 0 18px 35px rgba(0, 0, 0, 0.18);
 }
-/* Welcome section fix */
+/* Modern Welcome Card */
+#welcome .container {
+  max-width: 700px;
+}
+
+#welcome h2 {
+  font-size: 2rem;
+  margin-bottom: 18px;
+}
+
+#welcome .container {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 28px;
+  box-shadow: var(--shadow);
+}
+
 #welcome input {
   width: 100%;
-  max-width: 500px;
-  padding: 12px 16px;
+  padding: 14px 16px;
   font-size: 1rem;
-  border-radius: 12px;
+  border-radius: 14px;
   border: 1px solid var(--border);
-  margin-bottom: 12px;
+  background: var(--surface-2);
+  color: var(--text);
+  margin-bottom: 14px;
+}
+
+#welcome input::placeholder {
+  color: var(--muted);
 }
 
 #welcome .btn {
-  padding: 12px 20px;
+  padding: 12px 22px;
   font-size: 1rem;
-  border-radius: 12px;
+  border-radius: 14px;
 }
 
 #greetMessage {
-  margin-top: 14px;
-  font-size: 1.1rem;
-  font-weight: 700;
-}
-#welcome {
-  text-align: left;
-}
-
-#welcome input,
-#welcome .btn {
-  display: block;
+  margin-top: 18px;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--accent);
 }
