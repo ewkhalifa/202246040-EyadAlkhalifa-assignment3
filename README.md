@@ -1,33 +1,47 @@
-# Personal Portfolio Website – Assignment 2
+# Personal Portfolio Website – Assignment 3
 
 ## Project Description
-This project is my **Assignment 2 personal portfolio website**, built as an improved version of my Assignment 1 portfolio.  
-The goal of this assignment was to make the website more **interactive, modern, and user-friendly** by adding JavaScript-based features, better feedback for users, and smoother visual effects.
+This project is **Assignment 3** of my personal portfolio website, building on Assignments 1 and 2.
 
-The website introduces dynamic behavior such as:
-- A **theme toggle** with saved user preference using `localStorage`
-- A **dynamic greeting** based on the current time of day
-- A **responsive mobile navigation menu**
-- A **contact form with validation and user feedback**
-- Improved interactivity and smoother user experience using JavaScript and CSS transitions
+The goal of this assignment is to enhance the website by adding **advanced functionality**, including API integration, more complex logic, and improved state management. The portfolio is now more dynamic, interactive, and closer to a real-world web application.
+
+---
 
 ## Features
-- Responsive portfolio layout
-- Dynamic greeting message
-- Dark/light theme switch with saved preference
+
+### 🔹 Core Features
+- Responsive portfolio layout (mobile, tablet, desktop)
+- Dynamic greeting message based on time of day
+- Dark/light theme toggle with saved preference (localStorage)
 - Mobile-friendly navigation menu
-- Contact form validation
-- Success and error feedback messages
+- Contact form with validation and user feedback
 - Smooth scrolling and hover/transition effects
+
+### 🔹 New Features (Assignment 3)
+- **GitHub API Integration**  
+  Displays my latest GitHub repositories dynamically
+
+- **Project Filtering System**  
+  Users can filter projects based on categories
+
+- **State Management**  
+  User preferences (such as theme) are saved using localStorage
+
+- **Error Handling**  
+  Friendly messages are shown if API data fails to load
+
+---
 
 ## Technologies Used
 - HTML5
 - CSS3
 - JavaScript (Vanilla JS)
+- GitHub API
+
 
 ## Folder Structure
 ```bash
-assignment-2/
+assignment-3/
 ├── README.md
 ├── index.html
 ├── css/
